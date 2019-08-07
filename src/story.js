@@ -26,9 +26,9 @@ class Story extends Component {
   render() {
     return (
       <div>
-        <h2>{this.state.storyLineOne}</h2>
-        <h2>{this.state.storyLineTwo}</h2>
-        <h2>{this.state.storyLineThree}</h2>
+        <h2>{lines.line1[this.state.storyLineOne]}</h2>
+        <h2>{lines.line2[this.state.storyLineTwo]}</h2>
+        <h2>{lines.line3[this.state.storyLineThree]}</h2>
       </div>
     );
   }
