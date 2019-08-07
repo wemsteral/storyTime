@@ -25,3 +25,14 @@ it("renders the third line by default", () => {
   const wrapper = shallow(<Story />);
   expect(wrapper.find("h2").at(2).length).not.toBe(0);
 });
+
+it("renders shuffle buttons for each line", () => {
+  const wrapper = shallow(<Story />);
+  const label = "Shuffle!";
+  const button1 = wrapper.find("Button").at(1);
+  const button2 = wrapper.find("Button").at(2);
+  const button3 = wrapper.find("Button").at(3);
+  expect(button1.contains(label)).toEqual(true);
+  expect(button2.contains(label)).toEqual(true);
+  expect(button3.contains(label)).toEqual(true);
+});

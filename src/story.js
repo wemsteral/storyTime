@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import lines from "./lines.json";
+import { Button, ButtonGroup } from "react-bootstrap";
 
 class Story extends Component {
   constructor() {
@@ -23,12 +24,50 @@ class Story extends Component {
     return Math.floor(Math.random() * lines.line3.length);
   };
 
+  shuffleLineOne = () => {
+    this.setState({
+      storyLineOne: this.randomNumber1()
+    });
+  };
+
+  shuffleLineTwo = () => {
+    this.setState({
+      storyLineTwo: this.randomNumber2()
+    });
+  };
+
+  shuffleLineThree = () => {
+    this.setState({
+      storyLineThree: this.randomNumber3()
+    });
+  };
+
+  shuffleAll = () => {
+    this.shuffleLineOne();
+    this.shuffleLineTwo();
+    this.shuffleLineThree();
+  };
+
   render() {
     return (
       <div>
+        <h1>
+          <ButtonGroup>
+            <Button onClick={this.shuffleAll}>Shuffle all!</Button>
+          </ButtonGroup>
+        </h1>
         <h2>{lines.line1[this.state.storyLineOne]}</h2>
+        <ButtonGroup>
+          <Button onClick={this.shuffleLineOne}>Shuffle!</Button>
+        </ButtonGroup>
         <h2>{lines.line2[this.state.storyLineTwo]}</h2>
+        <ButtonGroup>
+          <Button onClick={this.shuffleLineTwo}>Shuffle!</Button>
+        </ButtonGroup>
         <h2>{lines.line3[this.state.storyLineThree]}</h2>
+        <ButtonGroup>
+          <Button onClick={this.shuffleLineThree}>Shuffle!</Button>
+        </ButtonGroup>
       </div>
     );
   }
