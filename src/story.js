@@ -10,7 +10,9 @@ class Story extends Component {
   render() {
     return (
       <div>
-        <p>{this.state.storyLineOne}</p>
+        <h2>{this.state.storyLineOne}</h2>
+        <h2>{this.state.storyLineOne}</h2>
+        <h2>{this.state.storyLineOne}</h2>
       </div>
     );
   }
